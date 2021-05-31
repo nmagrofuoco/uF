@@ -11,6 +11,7 @@ uF (multi-Features) is an algorithm developed to recognize 2D and 3D gestures sa
 
 ## Useful Links
 [1] Jean Vanderdonckt, Paolo Roselli, and Jorge Luis Pérez-Medina. 2018. !!FTL, an Articulation-Invariant Stroke Gesture Recognizer with Controllable Position, Scale, and Rotation Invariances. In Proceedings of the 20th ACM International Conference on Multimodal Interaction (ICMI '18). Association for Computing Machinery, New York, NY, USA, 125–134. DOI:https://doi.org/10.1145/3242969.3243032
+
 [2] In press.
 
 ## License
