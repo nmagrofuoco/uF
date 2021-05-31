@@ -2,12 +2,16 @@
 An (R)ST-invariant multi-modal recognizer for fast prototyping.
 
 ## Description
-uF (multi-Features) is an algorithm developed to recognize 2D and 3D gestures sampled by a touch-sensitive surface or an advanced computer vision technique, and characterized by one or several paths (i.e., uni- or multi-paths). The recognizer weights four features to determine the similarity between an (unknown) candidate gesture and a set of templates. All features are invariant to variations along Scale and Translation, whereas the second feature, similar to FTL's local shape distance, is insensitive to variations in Rotation (RST-invariant).
+uF (multi-Features) is an algorithm developed to recognize 2D and 3D gestures sampled by a touch-sensitive surface or an advanced computer vision technique, and characterized by one or several paths (i.e., uni- or multi-paths). The recognizer weights four features to determine the similarity between an (unknown) candidate gesture and a set of templates. All features are invariant to variations along Scale and Translation, whereas the second feature, similar to FTL and uV's local shape distance [1][2], is insensitive to variations in Rotation (RST-invariant).
 
 ## Get Started
 1. Initialize a `uFRecognizer(numPoints, alpha, beta, gamma, delta, articulations)` object where `numPoints` designates the number of points to which gestures are resampled (usually, numPoints=8), alpha, beta, gamma, and delta define the expected weight for each feature (usually, `3, 1.5, 1, 2` for 2D gestures, `1, 4, 0, 0` for 3D gestures, and `0, 1, 0, 0` for rotation-invariant gestures), and `articulations` define the relevant uni-path or multi-path articulations (i.e., an array of arrays of one or three paths, respectively).
 2. Add a series examples for each gesture class via the `addTemplate(paths, name)` method where `paths` is an array of arrays of Point objects for each gesture path and name designates the gesture class.
 3. Classify a candidate gesture via the `recognize(paths)` method where `paths` designates an unknown array of arrays of Point objects for each gesture path.
+
+## Useful Links
+[1] Jean Vanderdonckt, Paolo Roselli, and Jorge Luis Pérez-Medina. 2018. !!FTL, an Articulation-Invariant Stroke Gesture Recognizer with Controllable Position, Scale, and Rotation Invariances. In Proceedings of the 20th ACM International Conference on Multimodal Interaction (ICMI '18). Association for Computing Machinery, New York, NY, USA, 125–134. DOI:https://doi.org/10.1145/3242969.3243032
+[2] In press.
 
 ## License
 The academic publication for uF, and what should be used to cite it, is:
