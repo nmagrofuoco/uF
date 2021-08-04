@@ -269,6 +269,7 @@ uFRecognizer.prototype.normalize = function (paths) {
     let newVectors = [];
     for (let v = 0; v < paths[p].length; v += 1) {
       const norm = this.norm(paths[p][v]);
+      if (norm == 0) norm = 1; // avoid division by 0
       let newCoords = [];
       for (let c = 0; c < paths[p][v].coords.length; c += 1) {
         newCoords.push(paths[p][v].coords[c] / norm);
@@ -346,6 +347,7 @@ uFRecognizer.prototype.compare = function (g1, g2, minSoFar) {
 }
 
 uFRecognizer.prototype.elementWiseDistance = function (e1, e2, den) {
+  if (den == 0) den = 1; // avoid division by 0
   return this.euclideanDistance(e1, e2) / den;
 }
 
